@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - VTU</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assest/android-chrome-512x512">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/android-chrome-192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png}">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png}">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon.png">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="../assets/css/tailwind.output.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/regular.min.css" integrity="sha512-sWLOh8QiEOmwfP3jd0n7AneUOa6XKif5g8GU8FqdFMIbr6rYBt1PKWBp/Wv4E6PQ6N9lFtVAndujl9HbniDTog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript" src="../assets/js/jquery.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+    <script src="../assets/js/init-alpine.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+      defer
+    ></script>
+
+    <script type="text/javascript" src="../assets/js/chart.js"></script>
+
+
+    <!-- Tailwind css cdn -->
+    <link rel="stylesheet" href="../assets/css/tailwind_2.css">
+   
+
+   <!-- custom text editor -->
+    <script src="../assets/plugins/tinymce/jquery.tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="../assets/plugins/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+  </head>
+  <body>
+    <div
+      class="flex h-screen bg-gray-50 dark:bg-gray-900"
+      :class="{ 'overflow-hidden': isSideMenuOpen }"
+    >
+            <!-- Desktop sidebar -->
+      <aside 
+        class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0"
+      >
+        <div class="py-4 text-gray-500 dark:text-gray-400">
+          <a
+            class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
+            href="#"
+          >
+            Website Name
+          </a>
+          <ul class="mt-6">
+            <li class="relative px-6 py-3" id="dashboard">
+              
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                href="../dashboard/index.html"
+              >
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  ></path>
+                </svg>
+                <span class="ml-4">Dashboard</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li class="relative px-6 py-3" id="vtu">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../vtu/index.html"
+              >
+                
+                <i class="fa-solid fa-user"></i>
+                <span class="ml-4">VTU</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3" id="transactions">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../transactions/index.html"
+              >
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                  ></path>
+                </svg>
+                <span class="ml-4">Transactions</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3" id="reports">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../reports/index.html"
+              >
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
+                  ></path>
+                  <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                </svg>
+                <span class="ml-4">Reports</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3" id="cable">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../cable/index.html"
+              >
+                 <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  ></path>
+                </svg>
+                <span class="ml-4">Cable TV</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3" id="prices">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../prices/index.html"
+              >
+                 <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  ></path>
+                </svg>
+                <span class="ml-4">Prices</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3" id="settings">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../settings/index.html"
+              >
+                <i class="fa-solid fa-gears"></i>
+                <span class="ml-4">Settings</span>
+              </a>
+            </li>
+          </ul>
+          <div class="px-6 my-6" id="logout">
+            <form method="post" action="logout" class="p-0 m-0 relative block">
+              <button type="submit" 
+                class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+              >
+                Logout
+                <span class="ml-2" aria-hidden="true"><i class="fa-solid fa-right-from-bracket"></i></span>
+              </button>
+
+              <!-- CSRF Protection i.e hidden token -->
+            </form>
+          </div>
+        </div>
+
+      <span class="block relative w-full text-sm text-left text-gray-800 dark:text-gray-200 pl-5">&#169; Website Name 2022. All right reserved.</span>
+        <span class="block relative w-full text-blue-400 cursor-pointer text-sm text-left pl-5"><a target="_blank" href="https://cp.samorlhosting.com">Designed by SamorlHosting</a></span>
+
+      </aside>
+
+      <!-- Phone Sidebar -->
+            <!-- Mobile sidebar -->
+      <!-- Backdrop -->
+      <div
+        x-show="isSideMenuOpen"
+        x-transition:enter="transition ease-in-out duration-150"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in-out duration-150"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="fixed inset-0 z-10 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center"
+      ></div>
+      <aside
+        class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-white dark:bg-gray-800 md:hidden"
+        x-show="isSideMenuOpen"
+        x-transition:enter="transition ease-in-out duration-150"
+        x-transition:enter-start="opacity-0 transform -translate-x-20"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in-out duration-150"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0 transform -translate-x-20"
+        @click.away="closeSideMenu"
+        @keydown.escape="closeSideMenu"
+      >
+        <div class="py-4 text-gray-500 dark:text-gray-400">
+          <a
+            class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
+            href="#"
+          >
+            Website Name
+          </a>
+          <ul class="mt-6">
+            <li class="relative px-6 py-3" id="dashboard_phone">
+              
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                href="../dashboard/index.html"
+              >
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  ></path>
+                </svg>
+                <span class="ml-4">Dashboard</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li class="relative px-6 py-3" id="vtu_phone">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../vtu/index.html"
+              >
+                
+                <i class="fa-solid fa-user"></i>
+                <span class="ml-4">Vtu</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3" id="transactions_phone">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../transactions/index.html"
+              > 
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                  ></path>
+                </svg>
+                <span class="ml-4">Transactions</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3" id="reports_phone">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../reports/index.html"
+              >
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
+                  ></path>
+                  <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                </svg>
+                <span class="ml-4">Reports</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3" id="cable_phone">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../cable/index.html"
+              >
+                 <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  ></path>
+                </svg>
+                <span class="ml-4">Cable Tv</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3" id="prices_phone">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../prices/index.html"
+              >
+                 <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  ></path>
+                </svg>
+                <span class="ml-4">Prices</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3" id="settings_phone">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../settings/index.html"
+              >
+               <i class="fa-solid fa-gears"></i>
+                <span class="ml-4">Settings</span>
+              </a>
+            </li>
+          </ul>
+          <div class="px-6 my-6" id="logout">
+            <form method="post" action="logout" class="block p-0 relative m-0">
+              <button type="submit" 
+                class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+              >
+                Logout
+                <span class="ml-2" aria-hidden="true"><i class="fa-solid fa-right-from-bracket"></i></span>
+              </button>
+              <!-- Form Protection Token -->
+            </form>
+          </div>
+        </div>
+            <span class="block relative w-full text-sm text-left text-gray-800 dark:text-gray-200 pl-5">&#169; Website Name 2022. All right reserved.</span>
+        <span class="block relative w-full text-blue-400 cursor-pointer text-sm text-left pl-5"><a target="_blank" href="https://samorlhosting.com">Designed by SamorlHosting</a></span>
+      </aside>
+      <!-- End Phone Sidebar -->
+
+      <div class="flex flex-col flex-1 w-full">
+        <!-- Header -->
+          <header id="header" class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
+          <div
+            class="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300"
+          >
+            <!-- Mobile hamburger -->
+            <button
+              class="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple"
+              @click="toggleSideMenu"
+              aria-label="Menu"
+            >
+              <svg
+                class="w-6 h-6"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            <!-- Search input -->
+            <div class="flex justify-center flex-1 lg:mr-32 relative" data-aos="fade-in" data-aos-duration="3000" id="header">
+              <div
+                class="relative w-full max-w-xl mr-6 focus-within:text-purple-500"
+              >
+                <div class="absolute inset-y-0 flex items-center pl-2">
+                  <svg
+                    class="w-4 h-4"
+                    aria-hidden="true"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <input id="search"
+                  class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-600 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+                  type="text"
+                  placeholder="Search for transactions using dates"
+                  aria-label="Search"
+                />
+
+                  <!-- search results -->
+                  <div class="absolute search_result rounded dark:bg-white bg-gray-500 w-full hidden" style="overflow-x: auto;">
+                      
+                  </div>
+              </div>
+            </div>
+
+            <ul class="flex items-center flex-shrink-0 space-x-6">
+              <!-- Theme toggler -->
+              <li class="flex">
+                <button
+                  class="rounded-md focus:outline-none focus:shadow-outline-purple"
+                  @click="toggleTheme"
+                  aria-label="Toggle color mode"
+                >
+                  <template x-if="!dark">
+                    <svg
+                      class="w-5 h-5"
+                      aria-hidden="true"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                      ></path>
+                    </svg>
+                  </template>
+                  <template x-if="dark">
+                    <svg
+                      class="w-5 h-5"
+                      aria-hidden="true"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </template>
+                </button>
+              </li>
+              <!-- Email Config menu -->
+              <li class="relative">
+                <button
+                  class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
+                  @click="toggleProfileMenu"
+                  @keydown.escape="closeProfileMenu"
+                  aria-label="Account"
+                  aria-haspopup="true"
+                >
+                 <i class="fa fa-user text-sm p-2 shadow  rounded-full w-9 h-9 hover:border-white hover:border-2"></i>
+                </button>
+                 <template x-if="isProfileMenuOpen">
+                           <ul
+                              x-transition:leave="transition ease-in duration-150"
+                              x-transition:leave-start="opacity-100"
+                              x-transition:leave-end="opacity-0"
+                              @click.away="closeProfileMenu"
+                              @keydown.escape="closeProfileMenu"
+                              class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700"
+                              aria-label="submenu"
+                              >
+                              <li class="flex">
+                                 <a
+                                    class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="../prices/index.html"
+                                    >
+                                    <svg
+                                       class="w-4 h-4 mr-3"
+                                       aria-hidden="true"
+                                       fill="none"
+                                       stroke-linecap="round"
+                                       stroke-linejoin="round"
+                                       stroke-width="2"
+                                       viewBox="0 0 24 24"
+                                       stroke="currentColor"
+                                       >
+                                       <path
+                                          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                                          ></path>
+                                    </svg>
+                                    <span>Prices</span>
+                                 </a>
+                              </li>
+                              <li class="flex">
+                                 <a
+                                    class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="../settings/index.html"
+                                    >
+                                    <svg
+                                       class="w-4 h-4 mr-3"
+                                       aria-hidden="true"
+                                       fill="none"
+                                       stroke-linecap="round"
+                                       stroke-linejoin="round"
+                                       stroke-width="2"
+                                       viewBox="0 0 24 24"
+                                       stroke="currentColor"
+                                       >
+                                       <path
+                                          d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                                          ></path>
+                                       <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span>Settings</span>
+                                 </a>
+                              </li>
+                              <li class="flex">
+                                 <form action="logout" 
+                                    class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    method="post" 
+                                    >
+                                    <svg
+                                       class="w-4 h-4 mr-3"
+                                       aria-hidden="true"
+                                       fill="none"
+                                       stroke-linecap="round"
+                                       stroke-linejoin="round"
+                                       stroke-width="2"
+                                       viewBox="0 0 24 24"
+                                       stroke="currentColor"
+                                       >
+                                       <path
+                                          d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                                          ></path>
+                                    </svg>
+                                    <button type="submit">
+                                       Log out</span>
+                                       <!-- Form protection Token / Id -->
+                                 </form>
+                              </li>
+                           </ul>
+                        </template>
+              </li>
+            </ul>
+          </div>
+        </header>
+        <!-- End Header -->
+       <main class="h-full overflow-y-auto">
+            <div class="container px-6 mx-auto grid">
+    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+      Virtual Top ups
+    </h2>
+
+    <a href="#" class="flex items-center multiple_mail justify-between w-max mb-3 px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green float inline-block float-left" style="width: max-content;">Topup Balance</a>
+
+    
+    <a href="../transactions/create.html" class="flex items-center justify-between w-max mb-2 px-4 py-2 pb-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple float inline float-left" style="width: max-content;">Top-Up Airtime From Balance</a>
+
+
+    <!-- New Table -->
+<br>
+    <div class="w-full overflow-hidden rounded-lg shadow-xs">
+      <div class="w-full overflow-x-auto">
+
+        <table class="w-full whitespace-no-wrap">
+          <thead>
+            <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+              <th class="px-4 py-3">Id</th>
+              <th class="px-4 py-3">from</th>
+              <th class="px-4 py-3">Recipients</th>
+              <th class="px-4 py-3">Status</th>
+              <th class="px-4 py-3">Topup Code</th>
+              <th class="px-4 py-3">Date</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+            <tr class="text-gray-700 dark:text-gray-400">
+              <td class="px-4 py-3">1</td>
+              <td class="px-4 py-3">
+                <div class="flex items-center text-sm">
+                  <!-- Avatar with inset shadow -->
+                 
+                  <div>
+                    <p class="font-semibold text-left">Phone Number</p>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">
+                      +234-01-234-67-890
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-4 py-3 text-sm">
+                +234-01-234-67-890
+              </td>
+              <td class="px-4 py-3 text-xs">
+                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                  Success
+                </span>
+              </td>
+              <td class="px-4 py-3 text-xs">
+                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                  1234567890123455
+                </span>
+              </td>
+              <td class="px-4 py-3 text-sm">
+                Wednesday 22nd April 2022
+              </td>
+            </tr>
+            <tr class="text-gray-700 dark:text-gray-400">
+              <td class="px-4 py-3">2</td>
+              <td class="px-4 py-3">
+                <div class="flex items-center text-sm">
+                  <!-- Avatar with inset shadow -->
+                 
+                  <div>
+                    <p class="font-semibold text-left">Phone Number</p>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">
+                      +234-01-234-67-890
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-4 py-3 text-sm">
+                +234-01-234-67-890
+              </td>
+              <td class="px-4 py-3 text-xs">
+                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                  Success
+                </span>
+              </td>
+              <td class="px-4 py-3 text-xs">
+                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                  1234567890123455
+                </span>
+              </td>
+              <td class="px-4 py-3 text-sm">
+                Wednesday 22nd April 2022
+              </td>
+            </tr>
+            <tr class="text-gray-700 dark:text-gray-400">
+              <td class="px-4 py-3">3</td>
+              <td class="px-4 py-3">
+                <div class="flex items-center text-sm">
+                  <!-- Avatar with inset shadow -->
+                 
+                  <div>
+                    <p class="font-semibold text-left">Phone Number</p>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">
+                      +234-01-234-67-890
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-4 py-3 text-sm">
+                +234-01-234-67-890
+              </td>
+              <td class="px-4 py-3 text-xs">
+                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                  Success
+                </span>
+              </td>
+              <td class="px-4 py-3 text-xs">
+                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                  1234567890123455
+                </span>
+              </td>
+              <td class="px-4 py-3 text-sm">
+                Wednesday 22nd April 2022
+              </td>
+            </tr>
+            <tr class="text-gray-700 dark:text-gray-400">
+              <td class="px-4 py-3">4</td>
+              <td class="px-4 py-3">
+                <div class="flex items-center text-sm">
+                  <!-- Avatar with inset shadow -->
+                 
+                  <div>
+                    <p class="font-semibold text-left">Phone Number</p>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">
+                      +234-01-234-67-890
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-4 py-3 text-sm">
+                +234-01-234-67-890
+              </td>
+              <td class="px-4 py-3 text-xs">
+                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                  Success
+                </span>
+              </td>
+              <td class="px-4 py-3 text-xs">
+                <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                  1234567890123455
+                </span>
+              </td>
+              <td class="px-4 py-3 text-sm">
+                Wednesday 22nd April 2022
+              </td>
+            </tr>
+           
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+          <!-- top arrow -->
+  <a href="#header" data-aos="zoom-in-up" class="shadow-lg aos-init aos-animate" id="top_arrow"> <i class="fa fa-arrow-up"></i> </a>
+
+  <script type="text/javascript" src="http://localhost:8007/js/aos.js"></script>
+
+  <script type="text/javascript">
+    AOS.init({
+      duration: 2200,
+    });
+  </script>
+
+     <!-- single mail form -->
+  <div id="email_popup" class="justify-center items-center h-max w-full fixed top-0 right-0 left-0 bottom-0 hidden align-middle justify-center overflow-x-auto" style="background-color: #8891a34d;
+    z-index: 999;">
+    <div class="flex m-auto h-max flex m-auto h-auto bg-gray-50 dark:bg-gray-900 rounded p-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/3 relative">
+        <form id="mail_form" class="w-full pt-5 h-full" enctype="multipart/form-data" action="/mail/single" method="post">
+
+          <h2 class="text-center text-gray-500 text-lg dark:text-white font-semibold">
+          </h2>
+          <div class="absolute top-0 right-1 cursor-pointer close_popup" style="right: 20px; top: 10px;"><i class="fa fa-close text-2xl dark:text-white text-gray-300"></i></div>
+
+
+          <!-- Subject -->
+          <label class="text-sm w-full block mt-2 font-semibold text-gray-700 dark:text-gray-400">Email Subject: </label>
+          <input type="text" name="subject" placeholder="Enter Email Subject" class="border border-gray-200 w-full rounded p-2 py-1 mb-2 dark:text-gray-300 dark:bg-gray-700 text-sm">
+          
+
+          <!-- name -->
+          <label class="text-sm w-full block mt-2 font-semibold text-gray-700 dark:text-gray-400">Name: </label>
+          <input type="text" name="name" placeholder="Enter Name of recievers" class="border border-gray-200 w-full rounded p-2 py-1 mb-2 dark:text-gray-300 dark:bg-gray-700 text-sm">
+          
+
+          <!-- email -->
+          <label class="text-sm w-full block mt-2 font-semibold text-gray-700 dark:text-gray-400">Email: </label>
+          <input type="email" name="email" placeholder="Email of recievers" class="border border-gray-200 w-full rounded p-2 py-1 mb-2 dark:text-gray-300 dark:bg-gray-700 text-sm">
+          
+          <!-- message -->
+          <label class="text-sm w-full block mt-2 font-semibold text-gray-700 dark:text-gray-400">Message text/html: </label>
+          <textarea id="editor" rows="6" style="height: 100px; display: none;" name="message" class="w-full border border-gray-200 w-full rounded p-2 py-1 mb-2 dark:text-gray-300 dark:bg-gray-700 text-sm block" placeholder="Enter / Paste Messages Here( either Word Docs  or Html )" aria-hidden="true"></textarea><div role="application" class="tox tox-tinymce" aria-disabled="false" style="visibility: hidden; width: 100%; height: 50px;" data-mce-style="visibility: hidden; width: 100%; height: 50px;"><div class="tox-editor-container"><div data-alloy-vertical-dir="toptobottom" class="tox-editor-header"><div role="menubar" data-alloy-tabstop="true" class="tox-menubar"><button aria-haspopup="true" role="menuitem" type="button" data-alloy-tabstop="true" unselectable="on" tabindex="-1" class="tox-mbtn tox-mbtn--select" aria-expanded="false" style="user-select: none;"><span class="tox-mbtn__select-label">File</span><div class="tox-mbtn__select-chevron"><svg width="10" height="10"><path d="M8.7 2.2c.3-.3.8-.3 1 0 .4.4.4.9 0 1.2L5.7 7.8c-.3.3-.9.3-1.2 0L.2 3.4a.8.8 0 010-1.2c.3-.3.8-.3 1.1 0L5 6l3.7-3.8z" fill-rule="nonzero"></path></svg></div></button><button aria-haspopup="true" role="menuitem" type="button" data-alloy-tabstop="true" unselectable="on" tabindex="-1" class="tox-mbtn tox-mbtn--select" aria-expanded="false" style="user-select: none;"><span class="tox-mbtn__select-label">Edit</span><div class="tox-mbtn__select-chevron"><svg width="10" height="10"><path d="M8.7 2.2c.3-.3.8-.3 1 0 .4.4.4.9 0 1.2L5.7 7.8c-.3.3-.9.3-1.2 0L.2 3.4a.8.8 0 010-1.2c.3-.3.8-.3 1.1 0L5 6l3.7-3.8z" fill-rule="nonzero"></path></svg></div></button><button aria-haspopup="true" role="menuitem" type="button" data-alloy-tabstop="true" unselectable="on" tabindex="-1" class="tox-mbtn tox-mbtn--select" aria-expanded="false" style="user-select: none;"><span class="tox-mbtn__select-label">View</span><div class="tox-mbtn__select-chevron"><svg width="10" height="10"><path d="M8.7 2.2c.3-.3.8-.3 1 0 .4.4.4.9 0 1.2L5.7 7.8c-.3.3-.9.3-1.2 0L.2 3.4a.8.8 0 010-1.2c.3-.3.8-.3 1.1 0L5 6l3.7-3.8z" fill-rule="nonzero"></path></svg></div></button><button aria-haspopup="true" role="menuitem" type="button" data-alloy-tabstop="true" unselectable="on" tabindex="-1" class="tox-mbtn tox-mbtn--select" aria-expanded="false" style="user-select: none;"><span class="tox-mbtn__select-label">Insert</span><div class="tox-mbtn__select-chevron"><svg width="10" height="10"><path d="M8.7 2.2c.3-.3.8-.3 1 0 .4.4.4.9 0 1.2L5.7 7.8c-.3.3-.9.3-1.2 0L.2 3.4a.8.8 0 010-1.2c.3-.3.8-.3 1.1 0L5 6l3.7-3.8z" fill-rule="nonzero"></path></svg></div></button><button aria-haspopup="true" role="menuitem" type="button" data-alloy-tabstop="true" unselectable="on" tabindex="-1" class="tox-mbtn tox-mbtn--select" aria-expanded="false" style="user-select: none;"><span class="tox-mbtn__select-label">Format</span><div class="tox-mbtn__select-chevron"><svg width="10" height="10"><path d="M8.7 2.2c.3-.3.8-.3 1 0 .4.4.4.9 0 1.2L5.7 7.8c-.3.3-.9.3-1.2 0L.2 3.4a.8.8 0 010-1.2c.3-.3.8-.3 1.1 0L5 6l3.7-3.8z" fill-rule="nonzero"></path></svg></div></button><button aria-haspopup="true" role="menuitem" type="button" data-alloy-tabstop="true" unselectable="on" tabindex="-1" class="tox-mbtn tox-mbtn--select" aria-expanded="false" style="user-select: none;"><span class="tox-mbtn__select-label">Tools</span><div class="tox-mbtn__select-chevron"><svg width="10" height="10"><path d="M8.7 2.2c.3-.3.8-.3 1 0 .4.4.4.9 0 1.2L5.7 7.8c-.3.3-.9.3-1.2 0L.2 3.4a.8.8 0 010-1.2c.3-.3.8-.3 1.1 0L5 6l3.7-3.8z" fill-rule="nonzero"></path></svg></div></button><button aria-haspopup="true" role="menuitem" type="button" data-alloy-tabstop="true" unselectable="on" tabindex="-1" class="tox-mbtn tox-mbtn--select" aria-expanded="false" style="user-select: none;"><span class="tox-mbtn__select-label">Table</span><div class="tox-mbtn__select-chevron"><svg width="10" height="10"><path d="M8.7 2.2c.3-.3.8-.3 1 0 .4.4.4.9 0 1.2L5.7 7.8c-.3.3-.9.3-1.2 0L.2 3.4a.8.8 0 010-1.2c.3-.3.8-.3 1.1 0L5 6l3.7-3.8z" fill-rule="nonzero"></path></svg></div></button><button aria-haspopup="true" role="menuitem" type="button" data-alloy-tabstop="true" unselectable="on" tabindex="-1" class="tox-mbtn tox-mbtn--select" aria-expanded="false" style="user-select: none;"><span class="tox-mbtn__select-label">Help</span><div class="tox-mbtn__select-chevron"><svg width="10" height="10"><path d="M8.7 2.2c.3-.3.8-.3 1 0 .4.4.4.9 0 1.2L5.7 7.8c-.3.3-.9.3-1.2 0L.2 3.4a.8.8 0 010-1.2c.3-.3.8-.3 1.1 0L5 6l3.7-3.8z" fill-rule="nonzero"></path></svg></div></button></div><div role="group" class="tox-toolbar-overlord" aria-disabled="false"><div role="group" class="tox-toolbar__primary"><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button aria-label="Undo" title="Undo" type="button" tabindex="-1" class="tox-tbtn tox-tbtn--disabled" aria-disabled="true"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M6.4 8H12c3.7 0 6.2 2 6.8 5.1.6 2.7-.4 5.6-2.3 6.8a1 1 0 01-1-1.8c1.1-.6 1.8-2.7 1.4-4.6-.5-2.1-2.1-3.5-4.9-3.5H6.4l3.3 3.3a1 1 0 11-1.4 1.4l-5-5a1 1 0 010-1.4l5-5a1 1 0 011.4 1.4L6.4 8z" fill-rule="nonzero"></path></svg></span></button><button aria-label="Redo" title="Redo" type="button" tabindex="-1" class="tox-tbtn tox-tbtn--disabled" aria-disabled="true"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M17.6 10H12c-2.8 0-4.4 1.4-4.9 3.5-.4 2 .3 4 1.4 4.6a1 1 0 11-1 1.8c-2-1.2-2.9-4.1-2.3-6.8.6-3 3-5.1 6.8-5.1h5.6l-3.3-3.3a1 1 0 111.4-1.4l5 5a1 1 0 010 1.4l-5 5a1 1 0 01-1.4-1.4l3.3-3.3z" fill-rule="nonzero"></path></svg></span></button></div><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button title="Blocks" aria-label="Blocks" aria-haspopup="true" type="button" unselectable="on" tabindex="-1" class="tox-tbtn tox-tbtn--select tox-tbtn--bespoke" aria-expanded="false" style="user-select: none;"><span class="tox-tbtn__select-label">Paragraph</span><div class="tox-tbtn__select-chevron"><svg width="10" height="10"><path d="M8.7 2.2c.3-.3.8-.3 1 0 .4.4.4.9 0 1.2L5.7 7.8c-.3.3-.9.3-1.2 0L.2 3.4a.8.8 0 010-1.2c.3-.3.8-.3 1.1 0L5 6l3.7-3.8z" fill-rule="nonzero"></path></svg></div></button></div><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button aria-label="Bold" title="Bold" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M7.8 19c-.3 0-.5 0-.6-.2l-.2-.5V5.7c0-.2 0-.4.2-.5l.6-.2h5c1.5 0 2.7.3 3.5 1 .7.6 1.1 1.4 1.1 2.5a3 3 0 01-.6 1.9c-.4.6-1 1-1.6 1.2.4.1.9.3 1.3.6s.8.7 1 1.2c.4.4.5 1 .5 1.6 0 1.3-.4 2.3-1.3 3-.8.7-2.1 1-3.8 1H7.8zm5-8.3c.6 0 1.2-.1 1.6-.5.4-.3.6-.7.6-1.3 0-1.1-.8-1.7-2.3-1.7H9.3v3.5h3.4zm.5 6c.7 0 1.3-.1 1.7-.4.4-.4.6-.9.6-1.5s-.2-1-.7-1.4c-.4-.3-1-.4-2-.4H9.4v3.8h4z" fill-rule="evenodd"></path></svg></span></button><button aria-label="Italic" title="Italic" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M16.7 4.7l-.1.9h-.3c-.6 0-1 0-1.4.3-.3.3-.4.6-.5 1.1l-2.1 9.8v.6c0 .5.4.8 1.4.8h.2l-.2.8H8l.2-.8h.2c1.1 0 1.8-.5 2-1.5l2-9.8.1-.5c0-.6-.4-.8-1.4-.8h-.3l.2-.9h5.8z" fill-rule="evenodd"></path></svg></span></button><div aria-pressed="false" aria-label="Background color" title="Background color" role="button" aria-haspopup="true" unselectable="on" tabindex="-1" class="tox-split-button" aria-disabled="false" aria-expanded="false" aria-describedby="aria_5246738541621652661617779" style="user-select: none;"><span role="presentation" tabindex="-1" class="tox-tbtn" aria-disabled="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><g fill-rule="evenodd"><path id="tox-icon-highlight-bg-color__color" d="M3 18h18v3H3z"></path><path fill-rule="nonzero" d="M7.7 16.7H3l3.3-3.3-.7-.8L10.2 8l4 4.1-4 4.2c-.2.2-.6.2-.8 0l-.6-.7-1.1 1.1zm5-7.5L11 7.4l3-2.9a2 2 0 012.6 0L18 6c.7.7.7 2 0 2.7l-2.9 2.9-1.8-1.8-.5-.6"></path></g></svg></span></span><span role="presentation" tabindex="-1" class="tox-tbtn tox-split-button__chevron" aria-disabled="false"><svg width="10" height="10"><path d="M8.7 2.2c.3-.3.8-.3 1 0 .4.4.4.9 0 1.2L5.7 7.8c-.3.3-.9.3-1.2 0L.2 3.4a.8.8 0 010-1.2c.3-.3.8-.3 1.1 0L5 6l3.7-3.8z" fill-rule="nonzero"></path></svg></span><span aria-hidden="true" id="aria_5246738541621652661617779" style="display: none;">To open the popup, press Shift+Enter</span></div></div><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button aria-label="Align left" title="Align left" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M5 5h14c.6 0 1 .4 1 1s-.4 1-1 1H5a1 1 0 110-2zm0 4h8c.6 0 1 .4 1 1s-.4 1-1 1H5a1 1 0 110-2zm0 8h8c.6 0 1 .4 1 1s-.4 1-1 1H5a1 1 0 010-2zm0-4h14c.6 0 1 .4 1 1s-.4 1-1 1H5a1 1 0 010-2z" fill-rule="evenodd"></path></svg></span></button><button aria-label="Align center" title="Align center" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M5 5h14c.6 0 1 .4 1 1s-.4 1-1 1H5a1 1 0 110-2zm3 4h8c.6 0 1 .4 1 1s-.4 1-1 1H8a1 1 0 110-2zm0 8h8c.6 0 1 .4 1 1s-.4 1-1 1H8a1 1 0 010-2zm-3-4h14c.6 0 1 .4 1 1s-.4 1-1 1H5a1 1 0 010-2z" fill-rule="evenodd"></path></svg></span></button><button aria-label="Align right" title="Align right" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M5 5h14c.6 0 1 .4 1 1s-.4 1-1 1H5a1 1 0 110-2zm6 4h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0 8h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm-6-4h14c.6 0 1 .4 1 1s-.4 1-1 1H5a1 1 0 010-2z" fill-rule="evenodd"></path></svg></span></button><button aria-label="Justify" title="Justify" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M5 5h14c.6 0 1 .4 1 1s-.4 1-1 1H5a1 1 0 110-2zm0 4h14c.6 0 1 .4 1 1s-.4 1-1 1H5a1 1 0 110-2zm0 4h14c.6 0 1 .4 1 1s-.4 1-1 1H5a1 1 0 010-2zm0 4h14c.6 0 1 .4 1 1s-.4 1-1 1H5a1 1 0 010-2z" fill-rule="evenodd"></path></svg></span></button></div><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><div aria-pressed="false" aria-label="Bullet list" title="Bullet list" role="button" aria-haspopup="true" unselectable="on" tabindex="-1" class="tox-split-button" aria-disabled="false" aria-expanded="false" aria-describedby="aria_9734114131641652661617783" style="user-select: none;"><span role="presentation" tabindex="-1" class="tox-tbtn" aria-disabled="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M11 5h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0 6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0 6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zM4.5 6c0-.4.1-.8.4-1 .3-.4.7-.5 1.1-.5.4 0 .8.1 1 .4.4.3.5.7.5 1.1 0 .4-.1.8-.4 1-.3.4-.7.5-1.1.5-.4 0-.8-.1-1-.4-.4-.3-.5-.7-.5-1.1zm0 6c0-.4.1-.8.4-1 .3-.4.7-.5 1.1-.5.4 0 .8.1 1 .4.4.3.5.7.5 1.1 0 .4-.1.8-.4 1-.3.4-.7.5-1.1.5-.4 0-.8-.1-1-.4-.4-.3-.5-.7-.5-1.1zm0 6c0-.4.1-.8.4-1 .3-.4.7-.5 1.1-.5.4 0 .8.1 1 .4.4.3.5.7.5 1.1 0 .4-.1.8-.4 1-.3.4-.7.5-1.1.5-.4 0-.8-.1-1-.4-.4-.3-.5-.7-.5-1.1z" fill-rule="evenodd"></path></svg></span></span><span role="presentation" tabindex="-1" class="tox-tbtn tox-split-button__chevron" aria-disabled="false"><svg width="10" height="10"><path d="M8.7 2.2c.3-.3.8-.3 1 0 .4.4.4.9 0 1.2L5.7 7.8c-.3.3-.9.3-1.2 0L.2 3.4a.8.8 0 010-1.2c.3-.3.8-.3 1.1 0L5 6l3.7-3.8z" fill-rule="nonzero"></path></svg></span><span aria-hidden="true" id="aria_9734114131641652661617783" style="display: none;">To open the popup, press Shift+Enter</span></div><div aria-pressed="false" aria-label="Numbered list" title="Numbered list" role="button" aria-haspopup="true" unselectable="on" tabindex="-1" class="tox-split-button" aria-disabled="false" aria-expanded="false" aria-describedby="aria_9352144151661652661617784" style="user-select: none;"><span role="presentation" tabindex="-1" class="tox-tbtn" aria-disabled="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M10 17h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0-6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0-6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 110-2zM6 4v3.5c0 .3-.2.5-.5.5a.5.5 0 01-.5-.5V5h-.5a.5.5 0 010-1H6zm-1 8.8l.2.2h1.3c.3 0 .5.2.5.5s-.2.5-.5.5H4.9a1 1 0 01-.9-1V13c0-.4.3-.8.6-1l1.2-.4.2-.3a.2.2 0 00-.2-.2H4.5a.5.5 0 01-.5-.5c0-.3.2-.5.5-.5h1.6c.5 0 .9.4.9 1v.1c0 .4-.3.8-.6 1l-1.2.4-.2.3zM7 17v2c0 .6-.4 1-1 1H4.5a.5.5 0 010-1h1.2c.2 0 .3-.1.3-.3 0-.2-.1-.3-.3-.3H4.4a.4.4 0 110-.8h1.3c.2 0 .3-.1.3-.3 0-.2-.1-.3-.3-.3H4.5a.5.5 0 110-1H6c.6 0 1 .4 1 1z" fill-rule="evenodd"></path></svg></span></span><span role="presentation" tabindex="-1" class="tox-tbtn tox-split-button__chevron" aria-disabled="false"><svg width="10" height="10"><path d="M8.7 2.2c.3-.3.8-.3 1 0 .4.4.4.9 0 1.2L5.7 7.8c-.3.3-.9.3-1.2 0L.2 3.4a.8.8 0 010-1.2c.3-.3.8-.3 1.1 0L5 6l3.7-3.8z" fill-rule="nonzero"></path></svg></span><span aria-hidden="true" id="aria_9352144151661652661617784" style="display: none;">To open the popup, press Shift+Enter</span></div><button aria-label="Decrease indent" title="Decrease indent" type="button" tabindex="-1" class="tox-tbtn tox-tbtn--disabled" aria-disabled="true"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M7 5h12c.6 0 1 .4 1 1s-.4 1-1 1H7a1 1 0 110-2zm5 4h7c.6 0 1 .4 1 1s-.4 1-1 1h-7a1 1 0 010-2zm0 4h7c.6 0 1 .4 1 1s-.4 1-1 1h-7a1 1 0 010-2zm-5 4h12a1 1 0 010 2H7a1 1 0 010-2zm1.6-3.8a1 1 0 01-1.2 1.6l-3-2a1 1 0 010-1.6l3-2a1 1 0 011.2 1.6L6.8 12l1.8 1.2z" fill-rule="evenodd"></path></svg></span></button><button aria-label="Increase indent" title="Increase indent" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M7 5h12c.6 0 1 .4 1 1s-.4 1-1 1H7a1 1 0 110-2zm5 4h7c.6 0 1 .4 1 1s-.4 1-1 1h-7a1 1 0 010-2zm0 4h7c.6 0 1 .4 1 1s-.4 1-1 1h-7a1 1 0 010-2zm-5 4h12a1 1 0 010 2H7a1 1 0 010-2zm-2.6-3.8L6.2 12l-1.8-1.2a1 1 0 011.2-1.6l3 2a1 1 0 010 1.6l-3 2a1 1 0 11-1.2-1.6z" fill-rule="evenodd"></path></svg></span></button></div><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button aria-label="Clear formatting" title="Clear formatting" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M13.2 6a1 1 0 010 .2l-2.6 10a1 1 0 01-1 .8h-.2a.8.8 0 01-.8-1l2.6-10H8a1 1 0 110-2h9a1 1 0 010 2h-3.8zM5 18h7a1 1 0 010 2H5a1 1 0 010-2zm13 1.5L16.5 18 15 19.5a.7.7 0 01-1-1l1.5-1.5-1.5-1.5a.7.7 0 011-1l1.5 1.5 1.5-1.5a.7.7 0 011 1L17.5 17l1.5 1.5a.7.7 0 01-1 1z" fill-rule="evenodd"></path></svg></span></button></div><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button aria-label="Help" title="Help" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><g fill-rule="evenodd"><path d="M12 5.5a6.5 6.5 0 00-6 9 6.3 6.3 0 001.4 2l1 1a6.3 6.3 0 003.6 1 6.5 6.5 0 006-9 6.3 6.3 0 00-1.4-2l-1-1a6.3 6.3 0 00-3.6-1zM12 4a7.8 7.8 0 015.7 2.3A8 8 0 1112 4z"></path><path d="M9.6 9.7a.7.7 0 01-.7-.8c0-1.1 1.5-1.8 3.2-1.8 1.8 0 3.2.8 3.2 2.4 0 1.4-.4 2.1-1.5 2.8-.2 0-.3.1-.3.2a2 2 0 00-.8.8.8.8 0 01-1.4-.6c.3-.7.8-1 1.3-1.5l.4-.2c.7-.4.8-.6.8-1.5 0-.5-.6-.9-1.7-.9-.5 0-1 .1-1.4.3-.2 0-.3.1-.3.2v-.2c0 .4-.4.8-.8.8z" fill-rule="nonzero"></path><circle cx="12" cy="16" r="1"></circle></g></svg></span></button></div><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button aria-label="Fullscreen" title="Fullscreen" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M15.3 10l-1.2-1.3 2.9-3h-2.3a.9.9 0 110-1.7H19c.5 0 .9.4.9.9v4.4a.9.9 0 11-1.8 0V7l-2.9 3zm0 4l3 3v-2.3a.9.9 0 111.7 0V19c0 .5-.4.9-.9.9h-4.4a.9.9 0 110-1.8H17l-3-2.9 1.3-1.2zM10 15.4l-2.9 3h2.3a.9.9 0 110 1.7H5a.9.9 0 01-.9-.9v-4.4a.9.9 0 111.8 0V17l2.9-3 1.2 1.3zM8.7 10L5.7 7v2.3a.9.9 0 01-1.7 0V5c0-.5.4-.9.9-.9h4.4a.9.9 0 010 1.8H7l3 2.9-1.3 1.2z" fill-rule="nonzero"></path></svg></span></button></div><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button aria-label="Insert/edit image" title="Insert/edit image" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M5 15.7l3.3-3.2c.3-.3.7-.3 1 0L12 15l4.1-4c.3-.4.8-.4 1 0l2 1.9V5H5v10.7zM5 18V19h3l2.8-2.9-2-2L5 17.9zm14-3l-2.5-2.4-6.4 6.5H19v-4zM4 3h16c.6 0 1 .4 1 1v16c0 .6-.4 1-1 1H4a1 1 0 01-1-1V4c0-.6.4-1 1-1zm6 8a2 2 0 100-4 2 2 0 000 4z" fill-rule="nonzero"></path></svg></span></button></div><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button aria-label="Paste" title="Paste" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24"><path d="M18 9V5h-2v1c0 .6-.4 1-1 1H9a1 1 0 01-1-1V5H6v13h3V9h9zM9 20H6a2 2 0 01-2-2V5c0-1.1.9-2 2-2h3.2A3 3 0 0112 1a3 3 0 012.8 2H18a2 2 0 012 2v4h1v12H9v-1zm1.5-9.5v9h9v-9h-9zM12 3a1 1 0 00-1 1c0 .5.4 1 1 1s1-.5 1-1-.4-1-1-1z" fill-rule="nonzero"></path></svg></span></button></div></div></div><div class="tox-anchorbar"></div></div><div class="tox-sidebar-wrap"><div class="tox-edit-area"><iframe id="editor_ifr" frameborder="0" allowtransparency="true" title="Rich Text Area. Press ALT-0 for help." class="tox-edit-area__iframe"></iframe></div><div role="complementary" class="tox-sidebar"><div data-alloy-tabstop="true" tabindex="-1" class="tox-sidebar__slider tox-sidebar--sliding-closed" style="width: 0px;"><div class="tox-sidebar__pane-container"></div></div></div></div></div><div aria-hidden="true" class="tox-throbber" style="display: none;"></div></div>
+
+                    <input id="pdfToken" type="hidden" name="dzToken">
+          <label for="fileInput" style="width: max-content;" class="flex my-3 items-center justify-between w-max px-2 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-blue-800 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
+            <i class="fa fa-image mr-3"></i>
+            Click to add Pics to message
+          </label>
+          <input id="fileInput" class="hidden" name="pdf" type="file">
+
+          <button type="submit" style="width: max-content;" class="flex my-3 items-center justify-between w-max px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Send Mail &nbsp; <i class="fa fa-paper-plane"></i></button>
+
+          <input type="hidden" name="_token" value="DZkGXJwv1PWyIXsVXoOP4ZzryW9AraxkZN3maosk">        </form>
+    </div>
+
+    
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function (){
+
+      $(".menu").click(function (){
+        $(".sidebar").slideToggle('slow');
+      });
+      $('#exit_sidenav').click(function (){
+        $(".sidebar").slideToggle('slow');
+      });
+
+      $(".close_popup").click(function (){
+        $(this).parent().parent().parent().fadeOut('fast');
+      });
+
+
+      $('.single_mail').click(function (e) {
+          let __that = $(this);
+          let __subscribersId = __that.attr('data-id');
+          let __subscribersName = __that.attr('data-name');
+          let __subscribersEmail = __that.attr('data-email');
+
+          $('form#mail_form').attr('action', '/mail/single');
+
+
+          // show popup email block
+          $("form#mail_form input[name=name]").val(`${__subscribersName}`);
+          $("form#mail_form input[name=email]").val(`${__subscribersEmail}`);
+          // send request to send email in background
+          
+          $("#email_popup").fadeIn();
+          $("#email_popup").css('display', 'flex');
+
+          $("form#mail_form input[name=name]").attr('readonly', 'readonly');
+          $("form#mail_form input[name=email]").attr('readonly', 'readonly');
+
+          $("form#mail_form h2").html(`Send Mail To ${__subscribersName}`);
+
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+      });
+
+
+      $('.multiple_mail').click(function (e) {
+          let __that = $(this);
+          let __subscribersId = __that.attr('data-id');
+          let __subscribersName = __that.attr('data-name');
+          let __subscribersEmail = __that.attr('data-email');
+
+          $('form#mail_form').attr('action', '/mail/bulk');
+          // show popup email block
+          $("form#mail_form input[name=name]").val(`All Subscribers Name`);
+          $("form#mail_form input[name=email]").val(`All Email Address`);
+          // send request to send email in background
+          
+          $("#email_popup").fadeIn();
+          $("#email_popup").css('display', 'flex');
+
+          $("form#mail_form input[name=name]").attr('readonly', 'readonly');
+          $("form#mail_form input[name=email]").attr('readonly', 'readonly');
+
+          $("form#mail_form h2").html(`Send To All Subscribers`);
+
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+      });
+
+
+
+      // search events
+      $('#search').keyup(function(){
+        let __that = $(this);
+        let __val = __that.val();
+
+
+        if ( __val !== "" && __val.length > 3 ) {
+
+          let __url = window.location.origin + '/search/' + __val ;
+
+          $.ajax({
+            url: __url,
+            type: 'GET',
+            dataType: 'JSON',
+
+            complete: (response) => {
+              if ( response.status !== 404 && response.statusText !== "error" ) {
+                let __response = JSON.parse(response.responseText);
+
+                $(".search_result").fadeIn('slow');
+                $('.search_result').html('');
+
+                __response.forEach(function (__element) {
+                  $('.search_result').append(`<span class="single_mail_search hover:bg-gray-600 text-black font-semibold text-left mb-3 border-b-2 border-gray-200 w-full p-3 block relative" style="width: 100%;" data-id="${__element.id}" data-name="${__element.name}" data-email="${__element.email}">${__element.email}</span>`);
+
+                   $('.single_mail_search').click(function (e) {
+                      let __that = $(this);
+                      let __subscribersId = __that.attr('data-id');
+                      let __subscribersName = __that.attr('data-name');
+                      let __subscribersEmail = __that.attr('data-email');
+
+                      $('form#mail_form').attr('action', '/mail/single');
+
+
+                      // show popup email block
+                      $("form#mail_form input[name=name]").val(`${__subscribersName}`);
+                      $("form#mail_form input[name=email]").val(`${__subscribersEmail}`);
+                      // send request to send email in background
+                      
+                      $("#email_popup").fadeIn();
+                      $("#email_popup").css('display', 'flex');
+
+                      $("form#mail_form input[name=name]").attr('readonly', 'readonly');
+                      $("form#mail_form input[name=email]").attr('readonly', 'readonly');
+
+                      $("form#mail_form h2").html(`Send Mail To ${__subscribersName}`);
+
+                      e.preventDefault();
+                      e.stopPropagation();
+                      return false;
+                  });
+                });
+
+              }
+              else {
+                // show error messages
+                if ( response.statusText === "error" ) {
+                  // internet connection error
+                  console.error('Internet Connection Failed');
+                }
+                else {
+                  console.error('An Error Occurred');
+                }
+              }
+            },
+
+            error: err => {
+              console.log('Internal Server Error');
+            }
+          });
+        }
+      });
+
+    });
+  </script>        </main>
+      </div>
+    </div>
+
+     <script type="text/javascript">
+      $(document).ready(function (){
+         $("#vtu").append(`<span
+            class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+            aria-hidden="true"
+          ></span>`);
+
+         $("#vtu_phone").append(`<span
+            class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+            aria-hidden="true"
+          ></span>`);
+      });
+    </script>
+
+
+    <script type="text/javascript" src="../assets/js/charts-lines.js"></script>
+    <script type="text/javascript" src="../assets/js/charts-bars.js"></script>
+    <script type="text/javascript" src="../assets/js/charts-pie.js"></script>
+
+    <script type="text/javascript">
+      tinymce.init({
+            selector: 'textarea#editor',
+            height: 200,
+            width: '100%',
+            menubar: true,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste help wordcount autoresize'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+            'bold italic backcolor | alignleft aligncenter ' +
+            'alignright alignjustify | bullist numlist outdent indent | ' +
+            'removeformat | help | fullscreen | image | paste | file',
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+            statusbar: false,
+            toolbar_items_size: 'small',
+            element_format: 'html',
+            encoding: "UTF-8",
+            entity_encoding : "html",
+            oninit : "setPlainText",
+            apply_source_formatting : true,
+            images_upload_url: 'http://localhost/regno/image_processor.php',
+            automatic_uploads: true,
+            images_dataimg_filter: function(img) {
+              return !img.hasAttribute('internal-blob');  // blocks the upload of <img> elements with the attribute "internal-blob".
+            },
+            file_picker_types: 'file image media',
+            images_file_types: 'jpg,svg,webp,png,svg',
+        });
+
+
+      $(document).ready(function (){
+          $("#fileInput").on("change",function(){
+        //   var dataString=new FormData($("#fileInput")[0]);
+            var fd = new FormData();
+            var files = $('#fileInput')[0].files;
+            
+             // Check file selected or not
+            if(files.length > 0 ){
+               fd.append('file',files[0]);
+               
+                $.ajax({
+                  type: "POST",
+                  url: "http://localhost/regno/file_upload.php",
+                  enctype: "multipart/form-data",
+                  data: fd,
+                  cache:false,
+                  processData: false,
+                  contentType: false,
+                  dataType: "json",
+                  success: function(json) {
+                      console.log(json);
+                    let __fileUrl = json.location;
+                      // reset the form or it won't work a 2nd time
+
+                      let content =  tinymce.get("editor").getContent({ format: "html" });;
+                       
+                       if( __fileUrl.split('.').pop() === 'jpg' 
+                          || __fileUrl.split('.').pop() === 'png' 
+                          ||  __fileUrl.split('.').pop() === 'gif'
+                          ||  __fileUrl.split('.').pop() === 'svg'
+                          ||  __fileUrl.split('.').pop() === 'jpeg' ) {
+
+
+                        // show images preview
+                        
+                        tinymce.get("editor").execCommand('mceInsertContent', false, `<img src="${__fileUrl}">`);
+
+                       }
+                       else {
+                         tinymce.get("editor").execCommand('mceInsertContent', false, `<a href="${__fileUrl}">${__fileUrl}</a>`);
+                       }
+
+                  },
+                  erorr: err => {
+                    console.log(err);
+                  }
+            });  
+            }
+
+                            
+      });  
+      });
+
+      window.localStorage.setItem('dark', true);
+    </script>
+  </body>
+</html>
