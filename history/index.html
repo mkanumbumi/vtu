@@ -345,47 +345,109 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="main_navigation">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class=" dropdown">
-                            <a href="../dashboard/index.html">Dashboard</a>
+                        <li class=" hidden dropdown active">
+                            <a href="/" class="dropdown-toggle" >home</a>
+                            
                         </li>
-                       
-                        <li class=" dropdown">
+                        <li class=" hidden dropdown">
                             <a href="#" class="data_btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">VTU</a>
                            
                         </li>
-                        <li class=" dropdown">
+                        <li class=" hidden dropdown">
                             <a href="#" class="electricity_btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">Electricity</a>
                         </li>
-                        <li class=" dropdown">
+                        <li class=" hidden dropdown">
                             <a href="#" class="cable_btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">Cable TV</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="../dashboard/index.html" >Dashboard</a>
                         </li>
 
                         <li class=" dropdown">
                             <a href="../pricing/index.html" >Pricing</a>
                         </li>
 
-
-                        <li class="dropdown">
-                            <a href="../history/index.html">History</a>
+                        <li class=" dropdown">
+                            <a href="../history/index.html" >History</a>
                         </li>
 
 
+                        <li  class="login-link" style="background-color: #216ea7; font-weight: bolder;"><a class="login_popup_btn cursor-pointer">login</a></li>
+                        <li id="signup" class=" login-link" style="background-color: #216ea7; font-weight: bolder;"><a class="register_popup_btn cursor-pointer" href="#">Register</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
 
 
-       <section class="row slider p-0 m-0 w-full">
-<div class="py-20 bg-cover bg-no-repeat bg-fixed" style="background-color: #000000; background-image: url(https://media.vanityfair.com/photos/5ce426151c0b0773cacd1121/master/pass/star-wars-feature-vf-2019-summer-embed-05.jpg)">
-    <div class="container m-auto text-left px-6 opacity-500" style="">
-      <h2 class="text-5xl font-bold mb-2 text-black font-semibold" style="font-family: 'Poppins';">Dashboard</h2>
-      <h3 class="text-2xl mb-8 text-gray-200">Not much, but it could be a life form. This is Rouge Two. this is Rouge Two. Captain Solo, so you copy?</h3>
-      <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border-transparent hover:text-blue-500 hover:bg-gray-800">Commander Skywalker, do you copy?</button>
-    </div>
-</div>
-        
-           </div>
+       <section class="row slider">
+            <div class="owl-carousel home_slider">
+                <div class="item">
+                    <img  src="../assets/images/banner/2.png" alt="Cable Tv">
+                    <div class="slide_caption row m0">
+                        <div class="container">
+                            <div class="row">
+                                <h2>Cable TV</h2>
+                                <p><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;Topup your Cable Tv Within Minutes </p>
+                                <p><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;No Need for Signup</p>
+                                <p><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;No Additional Fees</p>
+                                <p><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;Fast, Secured and Reliable</p>
+                                <p><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;Supports all Payments Platform</p>
+                                <a href="#"  class="cable_btn btn btn-primary">Get Started</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img  src="../assets/images/banner/6.png" alt="Virtual Topup">
+                    <div class="slide_caption row m0">
+                        <div class="container">
+                            <div class="row">
+                                <h2>VTU topup</h2>
+                                <p class="pb-0 mb-0"><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;Send and recieve airtime anywhere, anytime</p>
+                                <p class="pb-0 mb-0"><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;Supports weekly, daily auto renew plans</p>
+                                <p class="pb-0 mb-0"><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;Gift Airtime.</p>
+                                <p class="pb-0 mb-0"><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;Top-rated for customer support 24x7</p>
+                                <a href="" class="data_btn btn btn-primary">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img  src="../assets/images/banner/4.png" alt="Electricity Payments">
+                    <div class="slide_caption row m0">
+                        <div class="container">
+                            <div class="row">
+                                <small>Advertisement</small>
+                                <h2>Electricity Payments</h2>
+                                <p class="pb-0 mb-0"><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;Pay for Electricity </p>
+                                <p class="pb-0 mb-0"><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;High-powered Service</p>
+                                <p class="pb-0 mb-0"><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;Get Meter Payments Instantly</p>
+                                <p class="pb-0 mb-0"><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;24x7 Support.</p>
+                                <a href="#" class="electricity_btn btn btn-primary">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img  src="../assets/images/banner/5.png" alt="Airtimes">
+                    <div class="slide_caption row m0">
+                        <div class="container">
+                            <div class="row">
+                                <small>Advertisement</small>
+                                <h2>Airtimes Features</h2>
+                                <p class="pb-0 mb-0"><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;Airtime To Cash</p>
+                                <p class="pb-0 mb-0"><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;Transfer / Gift Data</p>
+                                <p class="pb-0 mb-0"><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;and many more</p>
+                                <p class="pb-0 mb-0"><i class="fa fa-check text-3xl text-blue-500"></i>&nbsp;&nbsp;Schedule Give-aways</p>
+                                <a href="#" class="airtime_btn btn btn-primary">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <style type="text/css">
@@ -397,189 +459,87 @@
             }
         </style>
 
-        <section class="row why_choose">
-            <div class="container">
-                <div class="row sectionTitle">
-                    <h5>Why Choose</h5>
-                    <h2>{samplename}</h2>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 cause2choose">
-                        <div class="media" style="padding: 10px;">
-                            <div class="media-left block" style="padding-right: 2px !important;"><a href="#"><img style="height: 65px; padding: 3px;"  src="../assets/images/icons/cause2choose/reliability.png" alt=""></a></div>
-                            <div class="media-body">
-                                <h4>Reliable</h4>
-                                <p>Our Services are reliable. From our Subscription Services to Electricity Payments</p>
-                            </div>
+        <section class="price_lists my-10">
+            <br>
+            <div class="sectionTitle">
+                <h5>History &amp;</h5>
+                <h2>Transactions / History</h2>
+                <div class="p-10 px-20 md:px-36 m-auto flex flex-col w-full justify-center align-middle items-center"> 
+                   <div class="container mx-auto px-4 sm:px-8">
+                       <div class="py-2">
+                         
+                          <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                             <div
+                                class="inline-block min-w-full shadow-md rounded-lg overflow-hidden"
+                                >
+                                    <table class="min-w-full leading-normal">
+                                       <thead>
+                                          <tr>
+                                             <th
+                                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider"
+                                                >
+                                                Client / Invoice
+                                             </th>
+                                             <th
+                                                class="px-5 text-center py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider"
+                                                >
+                                                Amount
+                                             </th>
+                                             <th
+                                                class="px-5 text-center py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider"
+                                                >
+                                                Issued / Due
+                                             </th>
+                                             <th
+                                                class="px-5 text-center py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider"
+                                                >
+                                                Status
+                                             </th>
+                                          </tr>
+                                       </thead>
+                                       <tbody>
+                                          <tr>
+                                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                <div class="flex">
+                                                 
+                                                   <div class="ml-3">
+                                                      <p class="text-gray-900 whitespace-no-wrap">
+                                                         Molly Sanders
+                                                      </p>
+                                                   </div>
+                                                </div>
+                                             </td>
+                                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                <p class="text-gray-900 whitespace-no-wrap">20,000</p>
+                                                <p class="text-gray-600 whitespace-no-wrap">NGN</p>
+                                             </td>
+                                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                <p class="text-gray-900 whitespace-no-wrap">Sept 28, 2019</p>
+                                             </td>
+                                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                <span
+                                                   class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight"
+                                                   >
+                                                <span
+                                                   aria-hidden
+                                                   class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
+                                                   ></span>
+                                                <span class="relative">Paid</span>
+                                                </span>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                    <div class="col-sm-4 cause2choose">
-                        <div class="media" style="padding: 10px;">
-                            <div class="media-left block" style="padding-right: 2px !important;"><a href="#"><img style="height: 65px; padding: 3px;"  src="../assets/images/icons/cause2choose/security.png" alt=""></a></div>
-                            <div class="media-body">
-                                <h4>security</h4>
-                                <p>We offer Data Protection Services meaning all your data are Encrypted.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 cause2choose">
-                        <div class="media" style="padding: 10px;">
-                            <div class="media-left block" style="padding-right: 2px !important;"><a href="#"><img style="height: 65px; padding: 3px;"  src="../assets/images/icons/cause2choose/fast.png" alt=""></a></div>
-                            <div class="media-body">
-                                <h4>Fast Service</h4>
-                                <p>Our Services are ranked as one of the top fast VTU and Cable TV Online Platform.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 cause2choose">
-                        <div class="media" style="padding: 10px;">
-                            <div class="media-left block" style="padding-right: 2px !important;"><a href="#"><img style="height: 65px; padding: 3px;"  src="../assets/images/icons/cause2choose/money-back.png" alt=""></a></div>
-                            <div class="media-body">
-                                <h4>Money Back Gurantee</h4>
-                                <p>We offer Money back on request to customers valid services</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 cause2choose">
-                        <div class="media" style="padding: 10px;">
-                            <div class="media-left block" style="padding-right: 2px !important;"><a href="#"><img style="height: 65px; padding: 3px;"  src="../assets/images/icons/cause2choose/support.png" alt=""></a></div>
-                            <div class="media-body">
-                                <h4>technical support</h4>
-                                <p>We Offer 24/7 Customer Supports.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 cause2choose">
-                        <div class="media" style="padding: 10px;">
-                            <div class="media-left block" style="padding-right: 2px !important;"><a href="#"><img style="height: 65px; padding: 3px;"  src="../assets/images/icons/cause2choose/money.png" alt=""></a></div>
-                            <div class="media-body">
-                                <h4>Save More In Bulk Purchase</h4>
-                                <p>Our Bulk Services will help yoy save more and this is also best for resellers</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="p-7 md:p-10 lg:p-28"  style="background-color: #f2f7f4;">
-            <div class="pt-1">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
-
-                    <div class="bg-white border-t-2 border-blue-400 p-2 rounded shadow-lg p-10">
-                        <span class="icon m-auto block text-center py-5">
-                            <i class="fas fa-phone text-6xl"></i>
-                        </span>
-                        <h2 style="font-family: 'Poppins';" class="font-semibold text-3xl text-center block relative py-5">Airtime</h2>
-
-                        <div class="pt-5 text-center" style="font-family: 'Poppins';">
-                            Enjoy as much as 3% discount on airtime purchase on our platform. We offer Virtual Topup airtime for MTN, Glo, Airtel and 9mobile.
                         </div>
 
-                        <a style="font-family: 'Poppins'; background-color: #0099db !important; " href="#" class="airtime_btn my-10 py-2 px-7 text-white font-normal bg-blue-600 hover:bg-blue-800 hover:text-white border border-blue-400 transition-all rounded relative block w-max m-auto">Buy Airtime</a>
-                    </div>
-                    
-                    <div class="bg-white border-t-2 border-blue-400 p-2 rounded shadow-lg p-10">
-                        <span class="icon m-auto block text-center py-5">
-                            <i class="fas fa-mobile-alt text-6xl"></i>
-                        </span>
-                        <h2 style="font-family: 'Poppins';" class="font-semibold text-3xl text-center block relative py-5">Data</h2>
 
-                        <div class="pt-5 text-center" style="font-family: 'Poppins';">
-                            Buy and resell cheap data (+SME) on platformName.com and make money with us. We offer the cheapest data bundles for all networks.
-                        </div>
-
-                        <a style="font-family: 'Poppins'; background-color: #0099db !important; " href="#" class="data_btn my-10 py-2 px-7 text-white font-normal bg-blue-600 hover:bg-blue-800 hover:text-white border border-blue-400 transition-all rounded relative block w-max m-auto">Buy Data</a>
-                    </div>
-                    
-                    <div class="bg-white border-t-2 border-blue-400 p-2 rounded shadow-lg p-10">
-                        <span class="icon m-auto block text-center py-5">
-                            <i class="fas fa-laptop text-6xl"></i>
-                        </span>
-                        <h2 style="font-family: 'Poppins';" class="font-semibold text-3xl text-center block relative py-5">Cable Tv</h2>
-
-                        <div class="pt-5 text-center" style="font-family: 'Poppins';">
-                            Don’t miss that TV programme. Subscribe your Cable TV (DSTv, GOTv & Startimes) at the cheapest price and get instant activation.
-                        </div>
-
-                        <a style="font-family: 'Poppins'; background-color: #0099db !important; " href="#" class="cable_btn my-10 py-2 px-7 text-white font-normal bg-blue-600 hover:bg-blue-800 hover:text-white border border-blue-400 transition-all rounded relative block w-max m-auto">Pick a plan</a>
-                    </div>
-                    
-                    <div class="bg-white border-t-2 border-blue-400 p-2 rounded shadow-lg p-10">
-                        <span class="icon m-auto block text-center py-5">
-                            <i class="fas fa-lightbulb text-6xl"></i>
-                        </span>
-                        <h2 style="font-family: 'Poppins';" class="font-semibold text-3xl text-center block relative py-5">Electricity</h2>
-
-                        <div class="pt-5 text-center" style="font-family: 'Poppins';">
-                            Pay and get your token instantly via SMS, email. We offer all discos postpaid & prepaid including AEDC, EKEDC, IBEDC, IKEDC, JED, KAEDCO, KEDCO & PHED etc.
-                        </div>
-
-                        <a style="font-family: 'Poppins'; background-color: #0099db !important; " href="#" class="electricity_btn my-10 py-2 px-7 text-white font-normal bg-blue-600 hover:bg-blue-800 hover:text-white border border-blue-400 transition-all rounded relative block w-max m-auto">Pay for Electricity</a>
-                    </div>
-                    
-                    <div class="bg-white border-t-2 border-blue-400 p-2 rounded shadow-lg p-10">
-                        <span class="icon m-auto block text-center py-5">
-                            <i class="fas fa-money-bill text-6xl"></i>
-                        </span>
-                        <h2 style="font-family: 'Poppins';" class="font-semibold text-3xl text-center block relative py-5">Airtime to Cash</h2>
-
-                        <div class="pt-5 text-center" style="font-family: 'Poppins';">
-                            Convert airtime to cash online in Nigeria. We are very fast in paying out your cash either via your wallet or via your bank account. We convert MTN, Airtel, Glo and 9mobile. 19% Charges.
-                        </div>
-
-                        <a style="font-family: 'Poppins'; background-color: #0099db !important; " href="#" class="login_popup_btn airtime_to_cash_btn my-10 py-2 px-7 text-white font-normal bg-blue-500 hover:bg-blue-800 hover:text-white border border-blue-400 transition-all rounded relative block w-max m-auto">Covert Airtime</a>
-                    </div>
-                    
-                    <div class="bg-white border-t-2 border-blue-400 p-2 rounded shadow-lg p-10">
-                        <span class="icon m-auto block text-center py-5">
-                            <i class="fas fa-wallet text-6xl"></i>
-                        </span>
-                        <h2 style="font-family: 'Poppins';" class="font-semibold text-3xl text-center block relative py-5">Wallet Withdraw</h2>
-
-                        <div class="pt-5 text-center" style="font-family: 'Poppins';">
-                            We offer 10 minutes wallet withdrawal to your bank account. You can withdraw your wallet balance at any time. It may be money made via airtime to cash, topup or referral.
-                        </div>
-
-                        <a style="font-family: 'Poppins';background-color: #0099db !important; " href="" class="login_popup_btn my-10 py-2 px-7 text-white font-normal bg-blue-400 hover:bg-blue-800 hover:text-white border border-blue-400 transition-all rounded relative block w-max m-auto">Withdraw Balance</a>
-                    </div>
                 </div>
             </div>
         </section>
-
-        <!-- Testimonials -->
-        <div class="p-0 pt-20 pb-10 md:p-10 lg:p-20 bg-gray-200 testimonials ">
-            <div class="p-0 px-5 pb-10 md:px-5 lg:px-10 m-auto grid grid-cols-1 md:grid-cols-2 gap-20">
-                <div class="bg-white border-t-2 border-blue-400 p-2 rounded shadow-lg p-10">
-                    <span class="icon m-auto block text-center py-5">
-                        <i class="fas fa-wallet text-6xl"></i>
-                    </span>
-                    <h2 style="font-family: 'Poppins';" class="font-semibold text-3xl text-center block relative py-5">Instant Wallet Funding?</h2>
-
-                    <div class="pt-5 text-center" style="font-family: 'Poppins';">
-                        Yes, we got you covered. Enjoy easy, fast and instant funding of your wallet after payment. You will receive your personal VTU.ng bank account details for instant funding of wallet after registration. Any payment made into the bank account gets your wallet credited automatically. Oh my goodness!
-                    </div>
-
-                    <a style="font-family: 'Poppins';background-color: #0099db !important; " class="login_popup_btn my-10 py-2 px-7 text-white font-normal bg-blue-400 hover:bg-blue-800 hover:text-white border border-blue-400 transition-all rounded relative block w-max m-auto">Withdraw Balance</a>
-                </div>
-                <div class="bg-white border-t-2 border-blue-400 p-2 rounded shadow-lg p-10">
-                    <span class="icon m-auto block text-center py-5">
-                        <i class="fas fa-wallet text-6xl"></i>
-                    </span>
-                    <h2 style="font-family: 'Poppins';" class="font-semibold text-3xl text-center block relative py-5">Make Money as an Affiliate</h2>
-
-                    <div class="pt-5 text-center" style="font-family: 'Poppins';">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    </div>
-
-                    <a style="font-family: 'Poppins';background-color: #0099db !important; " class="login_popup_btn my-10 py-2 px-7 text-white font-normal bg-blue-400 hover:bg-blue-800 hover:text-white border border-blue-400 transition-all rounded relative block w-max m-auto">Become an Affiliate</a>
-                </div>
-            </div>
-        </div>
-        <!-- End Testimonials -->   
-
         <section class="row clients">
                 <div class="sectionTitle">
                     <h5>our partners &amp;</h5>
@@ -602,6 +562,7 @@
                </div>
         </section>
 
+      
         <footer class="footer-1 bg-gray-100 py-8 sm:py-12 bg-blue-900 text-white">
           <div class="container mx-auto px-4 pt-8">
             <div class="sm:flex sm:flex-wrap sm:-mx-4 md:py-4 pb-0">
