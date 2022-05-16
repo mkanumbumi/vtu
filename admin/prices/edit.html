@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Admin - Prices</title>
+      <title>Admin - Edit Prices</title>
       <link
          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
          rel="stylesheet"
@@ -38,9 +38,7 @@
       <script type="text/javascript" src="../assets/js/chart.js"></script>
       <!-- Tailwind css cdn -->
       <link rel="stylesheet" href="../assets/css/tailwind_2.css">
-      <!-- custom text editor -->
-      <script src="../assets/plugins/tinymce/jquery.tinymce.min.js" referrerpolicy="origin"></script>
-      <script src="../assets/plugins/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+     
    </head>
    <body>
       <div
@@ -582,61 +580,25 @@
     </h2>
     <!-- New Table -->
 
+    <a href="../prices/index.html" class="flex items-center multiple_mail justify-between w-max mb-3 px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green float inline-block float-left" style="width: max-content;">View all price lists</a>
+
     <!-- Form Add New Price -->
     <form class="block relative p-3 bg-white  rounded-lg shadow-md dark:bg-gray-800 w-full" method="POSt" action="">
-      <h2 class="my-6 text-lg font-semibold text-gray-700 dark:text-gray-200">Add New Price</h2>
+      <h2 class="my-6 text-lg font-semibold text-gray-700 dark:text-gray-200">Edit Price</h2>
 
       <!-- Products / Category Name -->
        <label for="product_name"class="text-sm w-full block mt-3 font-semibold text-gray-700 dark:text-gray-400">Products / Category Name
-          <input type="text" name="products_name" id="products_name" placeholder="Enter Products / Category Name"  class="border border-gray-200 w-full rounded p-2 py-1 mb-4 dark:text-gray-300 dark:bg-gray-700 text-sm">
+          <input type="text" name="products_name" id="products_name" placeholder="Enter Products / Category Name"  class="border border-gray-200 w-full rounded p-2 py-1 mb-4 dark:text-gray-300 dark:bg-gray-700 text-sm" value="gotv">
        </label>
 
        <!-- Products Price -->
          <label for="products_price"class="text-sm w-full block mt-3 font-semibold text-gray-700 dark:text-gray-400">Products Price
-            <input type="number" name="products_price" id="products_price" placeholder="Price"  class="border border-gray-200 w-full rounded p-2 py-1 mb-4 dark:text-gray-300 dark:bg-gray-700 text-sm">
+            <input type="number" name="products_price" id="products_price" placeholder="Price"  class="border border-gray-200 w-full rounded p-2 py-1 mb-4 dark:text-gray-300 dark:bg-gray-700 text-sm" value="9000">
          </label>
 
-         <button type="submit" class="flex items-center justify-between w-max px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Set Price</button>
+         <button type="submit" class="flex items-center justify-between w-max px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Update</button>
     </form>
 <br>
-    <div class="w-full overflow-hidden rounded-lg shadow-xs">
-      <div class="w-full overflow-x-auto">
-
-        <table class="w-full whitespace-no-wrap">
-          <thead>
-            <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-              <th class="px-4 py-3">Id</th>
-              <th class="px-4 py-3">Products</th>
-              <th class="px-4 py-3">Price</th>
-              <th class="px-4 py-3">Action</th>
-            </tr>
-          </thead>
-          <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-            <tr class="text-gray-700 dark:text-gray-400">
-              <td class="px-4 py-3">1</td>
-              <td class="px-4 py-3 text-center">
-                <div class="block items-center text-sm text-center">                 
-                    GoTV
-                </div>
-              </td>
-              <td class="px-4 py-3 text-sm">
-                4500
-              </td>
-              <td class="px-4 py-3 text-xs">
-               <!-- Delete Action Button -->
-               <i class="fa fa-trash p-2 cursor-pointer bg-red-700 hover:bg-red-400 text-white"></i>
-               <a href="../prices/edit.html">
-                  <i class="fa fa-edit p-2 cursor-pointer bg-green-700 bg-green-400 text-white"></i>
-               </a>
-              
-              </td>
-              
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-    </div>
   </div>
           <!-- top arrow -->
   <a href="#header" data-aos="zoom-in-up" class="shadow-lg aos-init aos-animate" id="top_arrow"> <i class="fa fa-arrow-up"></i> </a>
@@ -814,93 +776,6 @@
       <script type="text/javascript" src="../assets/js/charts-lines.js"></script>
       <script type="text/javascript" src="../assets/js/charts-bars.js"></script>
       <script type="text/javascript" src="../assets/js/charts-pie.js"></script>
-      <script type="text/javascript">
-         tinymce.init({
-               selector: 'textarea#editor',
-               height: 200,
-               width: '100%',
-               menubar: true,
-               plugins: [
-                   'advlist autolink lists link image charmap print preview anchor',
-                   'searchreplace visualblocks code fullscreen',
-                   'insertdatetime media table paste help wordcount autoresize'
-               ],
-               toolbar: 'undo redo | formatselect | ' +
-               'bold italic backcolor | alignleft aligncenter ' +
-               'alignright alignjustify | bullist numlist outdent indent | ' +
-               'removeformat | help | fullscreen | image | paste | file',
-               content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
-               statusbar: false,
-               toolbar_items_size: 'small',
-               element_format: 'html',
-               encoding: "UTF-8",
-               entity_encoding : "html",
-               oninit : "setPlainText",
-               apply_source_formatting : true,
-               images_upload_url: 'http://localhost/regno/image_processor.php',
-               automatic_uploads: true,
-               images_dataimg_filter: function(img) {
-                 return !img.hasAttribute('internal-blob');  // blocks the upload of <img> elements with the attribute "internal-blob".
-               },
-               file_picker_types: 'file image media',
-               images_file_types: 'jpg,svg,webp,png,svg',
-           });
-         
-         
-         $(document).ready(function (){
-             $("#fileInput").on("change",function(){
-           //   var dataString=new FormData($("#fileInput")[0]);
-               var fd = new FormData();
-               var files = $('#fileInput')[0].files;
-               
-                // Check file selected or not
-               if(files.length > 0 ){
-                  fd.append('file',files[0]);
-                  
-                   $.ajax({
-                     type: "POST",
-                     url: "http://localhost/regno/file_upload.php",
-                     enctype: "multipart/form-data",
-                     data: fd,
-                     cache:false,
-                     processData: false,
-                     contentType: false,
-                     dataType: "json",
-                     success: function(json) {
-                         console.log(json);
-                       let __fileUrl = json.location;
-                         // reset the form or it won't work a 2nd time
-         
-                         let content =  tinymce.get("editor").getContent({ format: "html" });;
-                          
-                          if( __fileUrl.split('.').pop() === 'jpg' 
-                             || __fileUrl.split('.').pop() === 'png' 
-                             ||  __fileUrl.split('.').pop() === 'gif'
-                             ||  __fileUrl.split('.').pop() === 'svg'
-                             ||  __fileUrl.split('.').pop() === 'jpeg' ) {
-         
-         
-                           // show images preview
-                           
-                           tinymce.get("editor").execCommand('mceInsertContent', false, `<img src="${__fileUrl}">`);
-         
-                          }
-                          else {
-                            tinymce.get("editor").execCommand('mceInsertContent', false, `<a href="${__fileUrl}">${__fileUrl}</a>`);
-                          }
-         
-                     },
-                     erorr: err => {
-                       console.log(err);
-                     }
-               });  
-               }
-         
-                               
-         });  
-         });
-         
-         window.localStorage.setItem('dark', true);
-      </script>
+    
    </body>
 </html>
